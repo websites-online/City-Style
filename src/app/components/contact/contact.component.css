@@ -107,21 +107,51 @@
   transform: translateX(6px);
 }
 
-.form-wrapper {
+.hours-card {
+  background: #fff;
+  border-radius: 1.6rem;
+  box-shadow: 0 24px 55px rgba(12, 10, 24, 0.12);
+  padding: 2rem;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.2rem;
+  align-content: start;
 }
 
-.form-wrapper h3 {
+.hours-card h3 {
   font-size: 2rem;
   color: #0c0a18;
   margin: 0;
 }
 
-.form-wrapper p {
+.hours-card p {
   margin: 0;
   color: rgba(12, 10, 24, 0.65);
   font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hours-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #0c0a18;
+}
+
+.hours-list .day {
+  color: rgba(12, 10, 24, 0.55);
+}
+
+.hours-note {
+  font-size: 0.95rem;
+  color: rgba(12, 10, 24, 0.6);
 }
 
 [data-animate='fade-right'],
@@ -152,5 +182,9 @@
 @media (max-width: 600px) {
   .contact-info {
     padding: 1.8rem;
+  }
+
+  .hours-card {
+    padding: 1.7rem;
   }
 }

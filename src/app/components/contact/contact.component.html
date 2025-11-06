@@ -28,9 +28,20 @@
     </ul>
   </div>
 
-  <div class="form-wrapper" data-animate="fade-left">
-    <h3>Kontaktformular</h3>
-    <p>Schreib uns Dein Anliegen – wir antworten werktags innerhalb von 24 Stunden.</p>
-    <app-contact-form></app-contact-form>
+  <div class="hours-card" data-animate="fade-left">
+    <h3>Salon Hours</h3>
+    <p>
+      Wir arbeiten mit flexiblen Slots – sichere Dir Deinen Termin online oder ruf kurz durch, wenn Du
+      einen Express-Service brauchst.
+    </p>
+    <ul class="hours-list">
+      <li *ngFor="let hour of hours">
+        <span class="day">{{ hour.day }}</span>
+        <span class="time">{{ hour.time }}</span>
+      </li>
+    </ul>
+    <p class="hours-note">
+      Late-Night-Termine auf Anfrage · Silent Appointments möglich · Walk-ins nach Verfügbarkeit
+    </p>
   </div>
 </section>

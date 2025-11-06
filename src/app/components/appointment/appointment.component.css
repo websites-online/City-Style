@@ -1,17 +1,17 @@
 .appointment-section {
-  padding: 4.5rem 1.5rem;
+  padding: 3.5rem 0;
   background: #f1edf4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2.3rem;
+  gap: 1.6rem;
 }
 
 .section-heading {
   text-align: center;
-  max-width: 680px;
-  margin: 0 auto 2rem;
+  max-width: 640px;
+  margin: 0 auto 1.6rem;
   color: #0c0a18;
 }
 
@@ -25,13 +25,13 @@
 
 .section-heading h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 3vw, 3.4rem);
-  margin-bottom: 1.1rem;
+  font-size: clamp(2.1rem, 2.6vw, 3.1rem);
+  margin-bottom: 0.8rem;
 }
 
 .section-heading p {
-  line-height: 1.6;
-  font-size: 1rem;
+  line-height: 1.5;
+  font-size: 0.96rem;
 }
 
 .section-heading a {
@@ -41,40 +41,59 @@
 }
 
 .appointment-wrapper {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 2.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 2.2rem;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.6rem;
+  align-items: stretch;
 }
 
 form {
   background: #fff;
-  padding: 2.2rem;
-  border-radius: 1.8rem;
-  box-shadow: 0 30px 70px rgba(12, 10, 24, 0.12);
-  border: 1px solid rgba(12, 10, 24, 0.05);
+  padding: 1.75rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 48px rgba(12, 10, 24, 0.1);
+  border: 1px solid rgba(12, 10, 24, 0.04);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 label {
   display: grid;
-  gap: 0.6rem;
-  color: rgba(12, 10, 24, 0.8);
+  gap: 0.45rem;
+  color: rgba(12, 10, 24, 0.78);
   font-weight: 600;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.02rem;
+}
+
+.time-display .time-value {
+  background: rgba(12, 10, 24, 0.04);
+  border: 1px dashed rgba(12, 10, 24, 0.18);
+  border-radius: 0.85rem;
+  padding: 0.7rem 0.95rem;
+  font-weight: 600;
+  color: #0c0a18;
+}
+
+.time-display .time-value.empty {
+  color: rgba(12, 10, 24, 0.45);
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 1rem;
   border: 1px solid rgba(12, 10, 24, 0.1);
   font-size: 1rem;
@@ -92,18 +111,18 @@ textarea:focus {
 }
 
 .notes {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 100px;
 }
 
 .submit {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.4rem;
   border-radius: 999px;
   border: none;
   background: linear-gradient(135deg, #f7e7b4, #dcbf68);
@@ -121,7 +140,7 @@ textarea {
 }
 
 .error {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #d92855;
   font-weight: 500;
 }
@@ -136,46 +155,83 @@ textarea {
 .info-card {
   background: linear-gradient(145deg, #0c0a18, #1c1133);
   color: #fff;
-  padding: 2.1rem;
-  border-radius: 1.8rem;
-  box-shadow: 0 30px 70px rgba(12, 10, 24, 0.22);
-  display: grid;
-  gap: 1.8rem;
-  align-content: start;
+  padding: 1.7rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 48px rgba(12, 10, 24, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 100%;
 }
 
 .info-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: #dcbf68;
 }
 
-.hours {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.time-grid {
   display: grid;
-  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.6rem;
+  max-height: clamp(260px, 45vh, 360px);
+  overflow-y: auto;
+  padding-right: 0.2rem;
+  scroll-snap-type: y proximity;
+  flex: 1 1 auto;
 }
 
-.hours li {
-  display: flex;
-  justify-content: space-between;
+.time-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.time-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.time-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.time-slot {
+  width: 100%;
+  padding: 0.7rem 0.4rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
   font-weight: 600;
+  letter-spacing: 0.04rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  scroll-snap-align: start;
 }
 
-.hours span:first-child {
-  color: rgba(255, 255, 255, 0.7);
+.time-slot:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.16);
 }
 
-.benefits {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+.time-slot.selected {
+  background: linear-gradient(135deg, #f7e7b4, #dcbf68);
+  color: #0c0a18;
+  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(220, 191, 104, 0.28);
+}
+
+.time-note {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
   .appointment-wrapper {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
   }
 
   .form-grid {
@@ -184,8 +240,8 @@ textarea {
 }
 
 @media (max-width: 600px) {
-  form,
-  .info-card {
-    padding: 1.9rem;
+  .time-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: 240px;
   }
 }
