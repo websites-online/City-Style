@@ -1,0 +1,36 @@
+<section id="kontakt" class="contact-section">
+  <div class="contact-info" data-animate="fade-right">
+    <h2>Kontakt & Anfahrt</h2>
+    <p>
+      City-Style Salon<br />
+      Friedrichstraße 21 · 10969 Berlin
+    </p>
+
+    <div class="contact-details">
+      <a href="tel:+49301234567">+49 (0)30 123 45 67</a>
+      <a href="mailto:hallo@city-style.de">hallo@city-style.de</a>
+    </div>
+
+    <div class="map-preview">
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+        alt="Luftaufnahme einer Stadt"
+      />
+      <div class="pin">City-Style</div>
+    </div>
+
+    <ul class="socials">
+      <li *ngFor="let social of socials">
+        <a [href]="social.url" target="_blank" rel="noopener noreferrer">
+          {{ social.label }} <span>{{ social.handle }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-wrapper" data-animate="fade-left">
+    <h3>Kontaktformular</h3>
+    <p>Schreib uns Dein Anliegen – wir antworten werktags innerhalb von 24 Stunden.</p>
+    <app-contact-form></app-contact-form>
+  </div>
+</section>

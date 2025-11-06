@@ -1,0 +1,33 @@
+<section id="ueber-uns" class="about-section">
+  <div class="image-wrapper" data-animate="fade-right">
+    <figure>
+      <img
+        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80"
+        alt="Stylistin beim Schneiden eines modernen Haarschnitts"
+      />
+      <figcaption>City-Style: Präzision, Gespür für Trends und echte Persönlichkeit.</figcaption>
+    </figure>
+  </div>
+
+  <div class="content" data-animate="fade-left">
+    <h2>Über City-Style</h2>
+    <p>
+      City-Style vereint internationale Trends mit persönlicher Beratung. Unser Team aus
+      preisgekrönten Stylist:innen entwickelt individuelle Looks, die Deinen Charakter betonen und
+      gleichzeitig für Deinen Alltag funktionieren. Wir nehmen uns Zeit, hören zu und arbeiten mit
+      nachhaltigen Premium-Produkten, die Dein Haar langfristig stärken.
+    </p>
+    <p>
+      Egal ob Business-Look, mutige Coloration oder Glam-Event-Styling – unsere City-Style-Expert:innen
+      begleiten Dich von der Idee bis zum Finish. Ganz nebenbei verwandeln wir Deinen Termin in eine
+      kleine Auszeit vom Großstadttrubel.
+    </p>
+
+    <div class="highlights">
+      <div class="highlight" *ngFor="let highlight of highlights">
+        <span class="value">{{ highlight.value }}</span>
+        <span class="label">{{ highlight.label }}</span>
+      </div>
+    </div>
+  </div>
+</section>

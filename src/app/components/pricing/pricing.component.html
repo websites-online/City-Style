@@ -1,0 +1,25 @@
+<section id="preise" class="pricing-section">
+  <div class="section-heading">
+    <span class="eyebrow">Preise</span>
+    <h2>Transparent & fair – City-Style Pricing</h2>
+    <p>
+      Alle Preise verstehen sich inklusive individueller Beratung, typgerechtem Styling und den
+      hochwertigsten Pflegeprodukten. Student:innen erhalten Montag bis Mittwoch 10 % Rabatt.
+    </p>
+  </div>
+
+  <div class="pricing-grid">
+    <article class="pricing-card" *ngFor="let category of categories">
+      <h3>{{ category.title }}</h3>
+      <ul>
+        <li *ngFor="let item of category.items">
+          <div class="info">
+            <span class="name">{{ item.name }}</span>
+            <span class="description">{{ item.description }}</span>
+          </div>
+          <span class="price">{{ item.price }}</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>

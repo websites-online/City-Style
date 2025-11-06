@@ -1,0 +1,33 @@
+<section id="start" class="hero">
+  <div class="backdrop"></div>
+  <div class="hero-content">
+    <div class="intro" data-animate="fade-up">
+      <p class="eyebrow">City-Style · Urban Eleganz</p>
+      <h1>
+        Dein exklusiver <span>Friseursalon</span> im Herzen der Stadt
+      </h1>
+      <p class="description">
+        Erlebe personalisierte Looks, moderne Schnitte und Farbakzente, die Deinen Lifestyle
+        widerspiegeln. Unsere Expert:innen bringen Runway-Trends direkt zu Dir – für Selbstbewusstsein
+        bei jedem Auftritt.
+      </p>
+      <div class="cta-group">
+        <a href="#termine" class="primary-cta">Termin vereinbaren</a>
+        <a href="#galerie" class="secondary-cta">Inspiration entdecken</a>
+      </div>
+    </div>
+
+    <div class="highlight-panel" data-animate="fade-left">
+      <ul>
+        <li *ngFor="let highlight of highlights">
+          <span class="icon">✂️</span>
+          {{ highlight }}
+        </li>
+      </ul>
+      <div class="availability">
+        <span class="dot"></span>
+        Nächster freier Slot: heute, 17:30 Uhr
+      </div>
+    </div>
+  </div>
+</section>

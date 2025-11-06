@@ -1,0 +1,20 @@
+<section id="galerie" class="gallery-section">
+  <div class="section-heading">
+    <span class="eyebrow">Galerie</span>
+    <h2>Looks, die City-Style definieren</h2>
+    <p>
+      Lass Dich von unseren aktuellen Trend- und Signature-Looks inspirieren. Folge uns auf Instagram
+      @citystyle.salon für tägliche Updates.
+    </p>
+  </div>
+
+  <div class="masonry">
+    <figure *ngFor="let item of galleryItems">
+      <img [src]="item.image" [alt]="item.title" loading="lazy" />
+      <figcaption>
+        <span class="category">{{ item.category }}</span>
+        <span class="title">{{ item.title }}</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>

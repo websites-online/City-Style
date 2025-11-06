@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  background: #fdfcfe;
+  color: #0c0a18;
+  scroll-behavior: smooth;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+}

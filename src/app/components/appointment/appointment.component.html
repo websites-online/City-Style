@@ -1,0 +1,86 @@
+<section id="termine" class="appointment-section">
+  <div class="section-heading">
+    <span class="eyebrow">Termine vereinbaren</span>
+    <h2>Dein Slot im City-Style Salon</h2>
+    <p>
+      Wähle Deinen gewünschten Service, Stylist:in und Termin. Wir bestätigen Deinen Slot innerhalb
+      weniger Minuten persönlich. Für kurzfristige Anfragen ruf uns direkt an: <a href="tel:+4915123456789">+49 (0)151 234 567 89</a>.
+    </p>
+  </div>
+
+  <div class="appointment-wrapper">
+    <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
+      <div class="form-grid">
+        <label>
+          <span>Service</span>
+          <select formControlName="service">
+            <option value="" disabled>Bitte auswählen</option>
+            <option *ngFor="let service of services" [value]="service.value">
+              {{ service.label }}
+            </option>
+          </select>
+          <small class="error" *ngIf="appointmentForm.get('service')?.touched && appointmentForm.get('service')?.invalid">
+            Bitte wähle einen Service.
+          </small>
+        </label>
+
+        <label>
+          <span>Stylist:in</span>
+          <select formControlName="stylist">
+            <option value="" disabled>Bitte auswählen</option>
+            <option *ngFor="let stylist of stylists" [value]="stylist.value">
+              {{ stylist.label }}
+            </option>
+          </select>
+          <small class="error" *ngIf="appointmentForm.get('stylist')?.touched && appointmentForm.get('stylist')?.invalid">
+            Bitte wähle eine:n Stylist:in.
+          </small>
+        </label>
+
+        <label>
+          <span>Datum</span>
+          <input type="date" formControlName="date" />
+          <small class="error" *ngIf="appointmentForm.get('date')?.touched && appointmentForm.get('date')?.invalid">
+            Bitte wähle ein Datum.
+          </small>
+        </label>
+
+        <label>
+          <span>Uhrzeit</span>
+          <input type="time" formControlName="time" />
+          <small class="error" *ngIf="appointmentForm.get('time')?.touched && appointmentForm.get('time')?.invalid">
+            Bitte wähle eine Uhrzeit.
+          </small>
+        </label>
+      </div>
+
+      <label class="notes">
+        <span>Styling-Notes (optional)</span>
+        <textarea
+          formControlName="notes"
+          rows="4"
+          placeholder="Moodboard-Link, Haarstruktur, besondere Wünsche..."
+        ></textarea>
+      </label>
+
+      <button type="submit" class="submit">Termin sichern</button>
+
+      <p class="confirmation" *ngIf="submitted && appointmentForm.valid">
+        Danke! Wir melden uns in Kürze telefonisch oder per Mail, um Deinen Termin final zu bestätigen.
+      </p>
+    </form>
+
+    <aside class="info-card">
+      <h3>Salon Hours</h3>
+      <ul class="hours">
+        <li><span>Mo · Di</span><span>09:00 – 19:00</span></li>
+        <li><span>Mi · Do</span><span>09:00 – 21:00</span></li>
+        <li><span>Fr</span><span>08:00 – 21:00</span></li>
+        <li><span>Sa</span><span>09:00 – 16:00</span></li>
+      </ul>
+      <div class="benefits">
+        <p>After-Work Specials ab 19:00 Uhr · Welcome Drinks · Silent Appointments auf Wunsch</p>
+      </div>
+    </aside>
+  </div>
+</section>
