@@ -1,25 +1,35 @@
 <section id="preise" class="pricing-section">
   <div class="section-heading">
     <span class="eyebrow">Preise</span>
-    <h2>Transparent & fair – City-Style Pricing</h2>
+    <h2>City-Style Pricing</h2>
     <p>
       Alle Preise verstehen sich inklusive individueller Beratung, typgerechtem Styling und den
-      hochwertigsten Pflegeprodukten. Student:innen erhalten Montag bis Mittwoch 10 % Rabatt.
+      hochwertigsten Pflegeprodukten.
     </p>
   </div>
 
-  <div class="pricing-grid">
-    <article class="pricing-card" *ngFor="let category of categories">
-      <h3>{{ category.title }}</h3>
-      <ul>
-        <li *ngFor="let item of category.items">
-          <div class="info">
+  <div class="table-wrapper">
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Beschreibung</th>
+          <th>Preis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of categories">
+          <td class="service">
             <span class="name">{{ item.name }}</span>
-            <span class="description">{{ item.description }}</span>
-          </div>
-          <span class="price">{{ item.price }}</span>
-        </li>
-      </ul>
-    </article>
+          </td>
+          <td class="description">
+            {{ item.description }}
+          </td>
+          <td class="price">
+            {{ item.price }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
