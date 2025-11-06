@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6.5rem 1.5rem 4rem;
+  padding: 5.5rem 1.5rem 3.5rem;
   color: #fff;
   background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80');
   background-size: cover;
@@ -51,16 +51,16 @@ h1 span {
 }
 
 .description {
-  font-size: 1.1rem;
-  max-width: 38rem;
-  line-height: 1.65;
-  margin-bottom: 2.2rem;
+  font-size: 1.05rem;
+  max-width: 36rem;
+  line-height: 1.6;
+  margin-bottom: 1.9rem;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .cta-group {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -69,7 +69,7 @@ h1 span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 2.2rem;
+  padding: 0.9rem 2rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
@@ -102,7 +102,7 @@ h1 span {
 .highlight-panel {
   background: rgba(12, 10, 24, 0.65);
   border-radius: 1.8rem;
-  padding: 2.4rem;
+  padding: 2rem;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -130,11 +130,11 @@ h1 span {
 }
 
 .availability {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.75rem 1.2rem;
+  padding: 0.7rem 1.1rem;
   border-radius: 999px;
   background: rgba(26, 255, 173, 0.12);
   color: #acffdc;

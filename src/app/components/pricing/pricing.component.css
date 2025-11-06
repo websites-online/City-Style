@@ -1,13 +1,18 @@
 .pricing-section {
-  padding: 6rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   background: linear-gradient(140deg, #0c0a18, #1c1133 50%, #34224d 100%);
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
 }
 
 .section-heading {
   text-align: center;
-  max-width: 740px;
-  margin: 0 auto 3rem;
+  max-width: 680px;
+  margin: 0 auto 2rem;
 }
 
 .section-heading .eyebrow {
@@ -26,8 +31,8 @@
 
 .section-heading p {
   color: rgba(255, 255, 255, 0.75);
-  line-height: 1.75;
-  font-size: 1.05rem;
+  line-height: 1.6;
+  font-size: 0.98rem;
 }
 
 .table-wrapper {
@@ -43,7 +48,7 @@
 
 .pricing-table {
   width: 100%;
-  min-width: 640px;
+  min-width: 620px;
   border-collapse: collapse;
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.92rem;

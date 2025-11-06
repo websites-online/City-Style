@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 interface GalleryItem {
   image: string;
-  title: string;
-  category: string;
 }
 
 @Component({
@@ -17,41 +15,23 @@ interface GalleryItem {
 export class GalleryComponent implements OnInit {
   protected readonly galleryItems: GalleryItem[] = [
     {
-      image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
-      title: 'Urban Blonde',
-      category: 'Color Couture'
+      image: 'assets/city5.webp'
     },
     {
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
-      title: 'Soft Waves',
-      category: 'Runway Styling'
+      image: 'assets/city6.webp'
     },
     {
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80',
-      title: 'The Gentle Fade',
-      category: 'Grooming Deluxe'
+      image: 'assets/city8.webp'
     },
     {
-      image: 'https://images.unsplash.com/photo-1519415943484-9fa1873496d0?auto=format&fit=crop&w=900&q=80',
-      title: 'Classic Gentleman',
-      category: 'Signature Cuts'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80',
-      title: 'Editorial Texture',
-      category: 'Runway Styling'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80',
-      title: 'Copper Glow',
-      category: 'Color Couture'
+      image: 'assets/city9.webp'
     }
   ];
 
   protected readonly currentIndex = signal(0);
   private readonly destroyRef = inject(DestroyRef);
   private slideTimer: ReturnType<typeof setInterval> | null = null;
-  private readonly intervalMs = 6000;
+  private readonly intervalMs = 2500;
 
   constructor() {
     this.destroyRef.onDestroy(() => this.clearTimer());

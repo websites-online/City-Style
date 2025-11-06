@@ -3,8 +3,7 @@
     <span class="eyebrow">Galerie</span>
     <h2>Looks, die City-Style definieren</h2>
     <p>
-      Lass Dich von unseren aktuellen Trend- und Signature-Looks inspirieren. Folge uns auf Instagram
-      @citystyle.salon für tägliche Updates.
+      Lass Dich von unseren aktuellen Trend- und Signature-Looks inspirieren.
     </p>
   </div>
 
@@ -19,12 +18,8 @@
       class="slides"
       [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'"
     >
-      <figure *ngFor="let item of galleryItems">
-        <img [src]="item.image" [alt]="item.title" loading="lazy" />
-        <figcaption>
-          <span class="category">{{ item.category }}</span>
-          <span class="title">{{ item.title }}</span>
-        </figcaption>
+      <figure *ngFor="let item of galleryItems; let idx = index">
+        <img [src]="item.image" [alt]="'City-Style Look ' + (idx + 1)" loading="lazy" />
       </figure>
     </div>
 

@@ -1,12 +1,12 @@
 .contact-form {
   background: #fff;
-  padding: 2.4rem;
-  border-radius: 1.8rem;
-  box-shadow: 0 25px 60px rgba(12, 10, 24, 0.1);
+  padding: 2.1rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 20px 50px rgba(12, 10, 24, 0.12);
   border: 1px solid rgba(12, 10, 24, 0.05);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1.3rem;
   align-items: start;
 }
 
@@ -54,7 +54,7 @@ textarea:focus {
 .submit {
   grid-column: span 2;
   justify-self: start;
-  padding: 0.95rem 2.2rem;
+  padding: 0.9rem 1.9rem;
   border-radius: 999px;
   border: none;
   background: linear-gradient(135deg, #f7e7b4, #dcbf68);

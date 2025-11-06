@@ -25,3 +25,12 @@ img {
 a {
   color: inherit;
 }
+
+.section-heading {
+  text-align: center;
+  margin: 0 auto 2rem;
+}
+
+.section-heading p {
+  margin: 0 auto;
+}

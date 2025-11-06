@@ -1,12 +1,17 @@
 .appointment-section {
-  padding: 6rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   background: #f1edf4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.3rem;
 }
 
 .section-heading {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto 3rem;
+  max-width: 680px;
+  margin: 0 auto 2rem;
   color: #0c0a18;
 }
 
@@ -25,8 +30,8 @@
 }
 
 .section-heading p {
-  line-height: 1.7;
-  font-size: 1.05rem;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 .section-heading a {
@@ -40,12 +45,12 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 2.5rem;
+  gap: 2.2rem;
 }
 
 form {
   background: #fff;
-  padding: 2.5rem;
+  padding: 2.2rem;
   border-radius: 1.8rem;
   box-shadow: 0 30px 70px rgba(12, 10, 24, 0.12);
   border: 1px solid rgba(12, 10, 24, 0.05);
@@ -131,7 +136,7 @@ textarea {
 .info-card {
   background: linear-gradient(145deg, #0c0a18, #1c1133);
   color: #fff;
-  padding: 2.5rem;
+  padding: 2.1rem;
   border-radius: 1.8rem;
   box-shadow: 0 30px 70px rgba(12, 10, 24, 0.22);
   display: grid;
@@ -140,7 +145,7 @@ textarea {
 }
 
 .info-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #dcbf68;
 }
 
@@ -163,8 +168,8 @@ textarea {
 }
 
 .benefits {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -181,6 +186,6 @@ textarea {
 @media (max-width: 600px) {
   form,
   .info-card {
-    padding: 2rem;
+    padding: 1.9rem;
   }
 }
