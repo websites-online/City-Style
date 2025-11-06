@@ -13,7 +13,7 @@
 .section-heading .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.45rem;
-  color: #fc4a1a;
+  color: #dcbf68;
   display: block;
   margin-bottom: 1.1rem;
 }
@@ -30,7 +30,7 @@
 }
 
 .section-heading a {
-  color: #fc4a1a;
+  color: #dcbf68;
   font-weight: 600;
   text-decoration: none;
 }
@@ -81,8 +81,8 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #fc4a1a;
-  box-shadow: 0 0 0 4px rgba(252, 74, 26, 0.15);
+  border-color: #dcbf68;
+  box-shadow: 0 0 0 4px rgba(220, 191, 104, 0.22);
   outline: none;
 }
 
@@ -101,7 +101,7 @@ textarea {
   padding: 1rem 1.5rem;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #f7b733, #fc4a1a);
+  background: linear-gradient(135deg, #f7e7b4, #dcbf68);
   color: #0c0a18;
   font-weight: 700;
   letter-spacing: 0.08rem;
@@ -112,7 +112,7 @@ textarea {
 
 .submit:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 35px rgba(252, 74, 26, 0.35);
+  box-shadow: 0 20px 35px rgba(220, 191, 104, 0.38);
 }
 
 .error {
@@ -141,7 +141,7 @@ textarea {
 
 .info-card h3 {
   font-size: 1.6rem;
-  color: #f7b733;
+  color: #dcbf68;
 }
 
 .hours {

@@ -24,7 +24,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(247, 183, 51, 0.3), transparent 60%);
+  background: radial-gradient(circle at top right, rgba(220, 191, 104, 0.3), transparent 60%);
   pointer-events: none;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .contact-details a {
-  color: #f7b733;
+  color: #dcbf68;
   text-decoration: none;
   font-weight: 600;
 }
@@ -73,7 +73,7 @@
   background: rgba(12, 10, 24, 0.8);
   padding: 0.65rem 1rem;
   border-radius: 999px;
-  color: #f7b733;
+  color: #dcbf68;
   font-weight: 600;
 }
 
@@ -98,7 +98,7 @@
 
 .socials a span {
   font-weight: 600;
-  color: #f7b733;
+  color: #dcbf68;
 }
 
 .socials a:hover {

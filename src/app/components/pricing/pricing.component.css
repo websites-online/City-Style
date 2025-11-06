@@ -13,7 +13,7 @@
 .section-heading .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.45rem;
-  color: #f7b733;
+  color: #dcbf68;
   display: block;
   margin-bottom: 1.1rem;
 }
@@ -42,7 +42,7 @@
   background: rgba(255, 255, 255, 0.06);
   border-radius: 1.8rem;
   padding: 2.4rem;
-  border: 1px solid rgba(247, 183, 51, 0.2);
+  border: 1px solid rgba(220, 191, 104, 0.25);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -56,7 +56,7 @@
 .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1.6rem;
-  color: #f7b733;
+  color: #dcbf68;
 }
 
 .pricing-card ul {

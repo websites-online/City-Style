@@ -47,7 +47,7 @@ h1 {
 }
 
 h1 span {
-  color: #f7b733;
+  color: #e4c05f;
 }
 
 .description {
@@ -78,14 +78,14 @@ h1 span {
 }
 
 .primary-cta {
-  background: linear-gradient(135deg, #f7b733, #fc4a1a);
+  background: linear-gradient(135deg, #f7e7b4, #dcbf68);
   color: #0c0a18;
-  box-shadow: 0 20px 35px rgba(252, 74, 26, 0.35);
+  box-shadow: 0 20px 35px rgba(220, 191, 104, 0.35);
 }
 
 .primary-cta:hover {
   transform: translateY(-4px);
-  box-shadow: 0 26px 45px rgba(252, 74, 26, 0.45);
+  box-shadow: 0 26px 45px rgba(220, 191, 104, 0.45);
 }
 
 .secondary-cta {
