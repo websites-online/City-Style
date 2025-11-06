@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface GalleryItem {
@@ -14,7 +14,7 @@ interface GalleryItem {
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
   protected readonly galleryItems: GalleryItem[] = [
     {
       image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
@@ -47,4 +47,57 @@ export class GalleryComponent {
       category: 'Color Couture'
     }
   ];
+
+  protected readonly currentIndex = signal(0);
+  private readonly destroyRef = inject(DestroyRef);
+  private slideTimer: ReturnType<typeof setInterval> | null = null;
+  private readonly intervalMs = 6000;
+
+  constructor() {
+    this.destroyRef.onDestroy(() => this.clearTimer());
+  }
+
+  ngOnInit(): void {
+    this.startAutoSlide();
+  }
+
+  protected nextSlide(): void {
+    this.currentIndex.update(idx => (idx + 1) % this.galleryItems.length);
+  }
+
+  protected previousSlide(): void {
+    this.currentIndex.update(idx => (idx - 1 + this.galleryItems.length) % this.galleryItems.length);
+  }
+
+  protected goToSlide(index: number): void {
+    if (index === this.currentIndex()) {
+      return;
+    }
+    this.currentIndex.set(index);
+    this.restartAutoSlide();
+  }
+
+  protected pauseAutoSlide(): void {
+    this.clearTimer();
+  }
+
+  protected resumeAutoSlide(): void {
+    this.startAutoSlide();
+  }
+
+  private startAutoSlide(): void {
+    this.clearTimer();
+    this.slideTimer = setInterval(() => this.nextSlide(), this.intervalMs);
+  }
+
+  private restartAutoSlide(): void {
+    this.startAutoSlide();
+  }
+
+  private clearTimer(): void {
+    if (this.slideTimer) {
+      clearInterval(this.slideTimer);
+      this.slideTimer = null;
+    }
+  }
 }

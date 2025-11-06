@@ -8,13 +8,41 @@
     </p>
   </div>
 
-  <div class="masonry">
-    <figure *ngFor="let item of galleryItems">
-      <img [src]="item.image" [alt]="item.title" loading="lazy" />
-      <figcaption>
-        <span class="category">{{ item.category }}</span>
-        <span class="title">{{ item.title }}</span>
-      </figcaption>
-    </figure>
+  <div
+    class="slider"
+    (mouseenter)="pauseAutoSlide()"
+    (mouseleave)="resumeAutoSlide()"
+    (focusin)="pauseAutoSlide()"
+    (focusout)="resumeAutoSlide()"
+  >
+    <div
+      class="slides"
+      [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'"
+    >
+      <figure *ngFor="let item of galleryItems">
+        <img [src]="item.image" [alt]="item.title" loading="lazy" />
+        <figcaption>
+          <span class="category">{{ item.category }}</span>
+          <span class="title">{{ item.title }}</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <button type="button" class="nav prev" (click)="previousSlide()" aria-label="Vorheriges Bild">
+      ‹
+    </button>
+    <button type="button" class="nav next" (click)="nextSlide()" aria-label="Nächstes Bild">
+      ›
+    </button>
+
+    <div class="indicators">
+      <button
+        type="button"
+        *ngFor="let item of galleryItems; let idx = index"
+        [class.active]="currentIndex() === idx"
+        (click)="goToSlide(idx)"
+        [attr.aria-label]="'Bild ' + (idx + 1)"
+      ></button>
+    </div>
   </div>
 </section>
