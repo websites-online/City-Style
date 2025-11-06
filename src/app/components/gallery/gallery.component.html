@@ -7,37 +7,15 @@
     </p>
   </div>
 
-  <div
-    class="slider"
-    (mouseenter)="pauseAutoSlide()"
-    (mouseleave)="resumeAutoSlide()"
-    (focusin)="pauseAutoSlide()"
-    (focusout)="resumeAutoSlide()"
-  >
-    <div
-      class="slides"
-      [style.transform]="'translateX(-' + currentIndex() * 100 + '%)'"
-    >
-      <figure *ngFor="let item of galleryItems; let idx = index">
-        <img [src]="item.image" [alt]="'City-Style Look ' + (idx + 1)" loading="lazy" />
+  <div class="marquee" aria-label="City-Style Galerie">
+    <div class="marquee-track">
+      <figure *ngFor="let item of marqueeItems; let idx = index">
+        <img
+          [src]="item.image"
+          [alt]="'City-Style Look ' + ((idx % itemCount) + 1)"
+          loading="lazy"
+        />
       </figure>
-    </div>
-
-    <button type="button" class="nav prev" (click)="previousSlide()" aria-label="Vorheriges Bild">
-      ‹
-    </button>
-    <button type="button" class="nav next" (click)="nextSlide()" aria-label="Nächstes Bild">
-      ›
-    </button>
-
-    <div class="indicators">
-      <button
-        type="button"
-        *ngFor="let item of galleryItems; let idx = index"
-        [class.active]="currentIndex() === idx"
-        (click)="goToSlide(idx)"
-        [attr.aria-label]="'Bild ' + (idx + 1)"
-      ></button>
     </div>
   </div>
 </section>
