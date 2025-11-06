@@ -17,6 +17,5 @@ export class AboutComponent {
   protected readonly highlights: Highlight[] = [
     { value: '15+', label: 'Jahre Erfahrung im Urban Hair Design' },
     { value: '1.200+', label: 'zufriedene Stammkund:innen' },
-    { value: '4', label: 'Award-prämierte Stylist:innen' }
   ];
 }

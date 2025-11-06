@@ -17,7 +17,6 @@ export class NavigationComponent {
     { label: 'Über uns', target: '#ueber-uns' },
     { label: 'Services', target: '#services' },
     { label: 'Preise', target: '#preise' },
-    { label: 'Termine', target: '#termine' },
     { label: 'Galerie', target: '#galerie' },
     { label: 'Kontakt', target: '#kontakt' }
   ];
