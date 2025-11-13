@@ -1,0 +1,23 @@
+.appointment-overview {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.appointment-table th,
+.appointment-table td {
+  border: 1px solid #eee;
+  padding: 0.4rem 0.6rem;
+}
+
+.appointment-table th {
+  background: #fafafa;
+  text-align: left;
+}

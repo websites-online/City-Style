@@ -7,6 +7,13 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'admin/termine',
+    loadComponent: () =>
+      import('./components/appointment-overview/appointment-overview')
+        .then(m => m.AppointmentOverviewComponent)
+
+  },
+  {
     path: 'datenschutzundimpressum',
     loadComponent: () => import('./pages/legal/legal.component').then(m => m.LegalComponent)
   },

@@ -1,0 +1,44 @@
+<section class="appointment-overview">
+  <div class="section-heading">
+    <span class="eyebrow">Admin</span>
+    <h2>Terminübersicht</h2>
+    <p>Alle eingegangenen Termine aus der Firestore-Collection <code>appointments</code>.</p>
+  </div>
+
+  <div *ngIf="appointments$ | async as appointments; else loading">
+    <div *ngIf="appointments.length; else empty">
+      <table class="appointment-table">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Uhrzeit</th>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Service</th>
+            <th>Stylist:in</th>
+            <th>Notizen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of appointments">
+            <td>{{ a.date }}</td>
+            <td>{{ a.time }}</td>
+            <td>{{ a.name }}</td>
+            <td>{{ a.email }}</td>
+            <td>{{ a.service }}</td>
+            <td>{{ a.stylist }}</td>
+            <td>{{ a.notes || '–' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #empty>
+      <p>Es sind noch keine Termine vorhanden.</p>
+    </ng-template>
+  </div>
+
+  <ng-template #loading>
+    <p>Lade Termine …</p>
+  </ng-template>
+</section>
