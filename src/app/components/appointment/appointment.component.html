@@ -3,14 +3,30 @@
     <span class="eyebrow">Termin vereinbaren</span>
     <h2>Dein Termin im City-Style Salon</h2>
     <p>
-      Service, Stylist:in und Termin wählen – wir melden uns blitzschnell zur Bestätigung. Kurzfristig erreichbar unter
-      <a href="tel:+4915123456789">0911 421966</a>.
+      Service, Stylist:in und Termin wählen – wir melden uns blitzschnell zur Bestätigung.
+      Kurzfristig erreichbar unter <a href="tel:+49911421966">0911 421966</a>.
     </p>
   </div>
 
   <div class="appointment-wrapper">
     <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
       <div class="form-grid">
+        <label>
+          <span>Name</span>
+          <input type="text" formControlName="name" placeholder="Dein Name" />
+          <small class="error" *ngIf="appointmentForm.get('name')?.touched && appointmentForm.get('name')?.invalid">
+            Bitte gib Deinen Namen ein.
+          </small>
+        </label>
+
+        <label>
+          <span>E-Mail</span>
+          <input type="email" formControlName="email" placeholder="you@citymail.de" />
+          <small class="error" *ngIf="appointmentForm.get('email')?.touched && appointmentForm.get('email')?.invalid">
+            Bitte gib eine gültige E-Mail-Adresse ein.
+          </small>
+        </label>
+
         <label>
           <span>Service</span>
           <select formControlName="service">
@@ -59,18 +75,17 @@
 
       <label class="notes">
         <span>Styling-Notes (optional)</span>
-        <textarea
-          formControlName="notes"
-          rows="4"
-          placeholder="Moodboard, Haarstruktur oder Wünsche …"
-        ></textarea>
+        <textarea formControlName="notes" rows="4" placeholder="Moodboard, Haarstruktur oder Wünsche …"></textarea>
       </label>
 
-      <button type="submit" class="submit">Termin sichern</button>
+      <button type="submit" class="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Wird gesendet …' : 'Termin sichern' }}
+      </button>
 
-      <p class="confirmation" *ngIf="submitted && appointmentForm.valid">
+      <p class="confirmation" *ngIf="submitSuccess">
         Danke! Wir melden uns in Kürze telefonisch oder per Mail, um Deinen Termin final zu bestätigen.
       </p>
+      <p class="error global" *ngIf="submitError">{{ submitError }}</p>
     </form>
 
     <aside class="info-card">
@@ -87,7 +102,6 @@
           {{ slot }}
         </button>
       </div>
-    
     </aside>
   </div>
 </section>

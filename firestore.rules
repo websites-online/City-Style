@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Timeslots: lesen für alle; schreiben (anlegen/aktualisieren) nur eingeloggt
+    match /timeslots/{date}/slots/{time} {
+      allow read: if true;
+      allow create, update: if request.auth != null;
+    }
+
+    // Bookings: nur eigener Zugriff
+    match /bookings/{id} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read:   if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    // 🚨 NEU: Appointments – aktuell simples Modell: jeder darf schreiben
+    match /appointments/{docId} {
+      allow create: if true;
+      // Optional: lesen erlauben, wenn du sie irgendwann im Frontend anzeigen willst:
+      allow read: if true;
+      // Update/Delete blocken:
+      allow update, delete: if false;
+    }
+  }
+}

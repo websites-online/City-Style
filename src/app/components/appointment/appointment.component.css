@@ -131,18 +131,29 @@ textarea {
   letter-spacing: 0.08rem;
   text-transform: uppercase;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
-.submit:hover {
+.submit:hover:not(:disabled) {
   transform: translateY(-4px);
   box-shadow: 0 20px 35px rgba(220, 191, 104, 0.38);
+}
+
+.submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 .error {
   font-size: 0.78rem;
   color: #d92855;
   font-weight: 500;
+}
+
+.error.global {
+  text-align: center;
+  margin-top: 0.8rem;
 }
 
 .confirmation {

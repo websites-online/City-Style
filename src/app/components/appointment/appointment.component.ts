@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { BookingService, AppointmentPayload } from '../../services/booking.service';
 
 interface Option {
   value: string;
@@ -15,6 +16,9 @@ interface Option {
   styleUrl: './appointment.component.css'
 })
 export class AppointmentComponent {
+  private readonly formBuilder = inject(FormBuilder);
+  private readonly bookingService = inject(BookingService);
+
   protected readonly services: Option[] = [
     { value: 'damenhaarschnitt', label: 'Damenhaarschnitt & Styling' },
     { value: 'herrenhaarschnitt', label: 'Herrenhaarschnitt' },
@@ -34,20 +38,23 @@ export class AppointmentComponent {
     { value: 'marko', label: 'Marko' }
   ];
 
-  protected readonly timeSlots = this.createTimeSlots(9, 20, 30);
-  protected readonly appointmentForm: FormGroup;
-  protected submitted = false;
-  protected selectedTime: string | null = null;
+  protected readonly timeSlots = this.createTimeSlots(8, 21, 30);
 
-  constructor(private readonly formBuilder: FormBuilder) {
-    this.appointmentForm = this.formBuilder.group({
-      service: ['', Validators.required],
-      stylist: ['', Validators.required],
-      date: ['', Validators.required],
-      time: ['', Validators.required],
-      notes: ['']
-    });
-  }
+  protected readonly appointmentForm: FormGroup = this.formBuilder.group({
+    service: ['', Validators.required],
+    stylist: ['', Validators.required],
+    date: ['', Validators.required],
+    time: ['', Validators.required],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['', [Validators.required, Validators.email]],
+    notes: ['']
+  });
+
+  protected selectedTime: string | null = null;
+  protected isSubmitting = false;
+  protected submitError = '';
+  protected submitSuccess = false;
+  protected submitted = false;
 
   selectTime(slot: string): void {
     this.selectedTime = slot;
@@ -57,16 +64,32 @@ export class AppointmentComponent {
     control?.markAsTouched();
   }
 
-  submit(): void {
+  async submit() {
     this.submitted = true;
+    this.submitError = '';
+    this.submitSuccess = false;
+
     if (this.appointmentForm.invalid) {
       this.appointmentForm.markAllAsTouched();
       return;
     }
 
-    console.table(this.appointmentForm.value);
-    this.appointmentForm.reset();
-    this.selectedTime = null;
+    const val: AppointmentPayload = this.appointmentForm.value;
+
+    this.isSubmitting = true;
+    try {
+      await this.bookingService.bookAppointment(val);
+      this.submitSuccess = true;
+      this.appointmentForm.reset();
+      this.selectedTime = null;
+      this.submitted = false;
+    } catch (e: any) {
+      const msg = e?.message || '';
+      this.submitError = msg || 'Ups! Termin konnte nicht gespeichert werden. Bitte versuche es später erneut.';
+      console.error('Firebase booking error:', e);
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 
   private createTimeSlots(startHour: number, endHour: number, intervalMinutes: number): string[] {
