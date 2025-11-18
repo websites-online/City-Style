@@ -21,15 +21,42 @@ export class AppointmentComponent {
   private readonly bookingService = inject(BookingService);
 
   protected readonly services: Option[] = [
-    { value: 'damenhaarschnitt', label: 'Damenhaarschnitt & Styling' },
-    { value: 'herrenhaarschnitt', label: 'Herrenhaarschnitt' },
-    { value: 'kinderhaarschnitt', label: 'Kinderhaarschnitt (bis 12 Jahre)' },
-    { value: 'balayage', label: 'Balayage / Strähnen' },
-    { value: 'ansatzfarbe', label: 'Ansatzfarbe' },
-    { value: 'intensivtoenung', label: 'Intensivtönung / Gloss' },
-    { value: 'keratin-treatment', label: 'Keratin Treatment' },
-    { value: 'pflegekur', label: 'Pflegekur & Kopfhautmassage' },
-    { value: 'event-styling', label: 'Event- / Brautstyling' }
+    // Herren
+    { value: 'herren-schneiden-foehnen', label: 'Herren · Schneiden/Föhnen' },
+    { value: 'herren-waschen-schneiden-foehnen', label: 'Herren · Waschen/Schneiden/Föhnen' },
+    { value: 'herren-nassrasur', label: 'Herren · Nassrasur' },
+    { value: 'herren-schneiden-formen-schere', label: 'Herren · Schneiden/Formen mit Schere' },
+    { value: 'herren-bart-stutzen', label: 'Herren · Bart stutzen' },
+    { value: 'herren-bart-formen', label: 'Herren · Bart formen' },
+    { value: 'herren-augenbrauen-faden', label: 'Herren · Augenbrauen zupfen mit Faden' },
+    { value: 'herren-wachs-gesicht', label: 'Herren · Wachs Gesicht komplett' },
+    { value: 'herren-augenbrauen-messer', label: 'Herren · Augenbrauen mit Messer' },
+    { value: 'herren-farbe-strahnen', label: 'Herren · Farbe/Strähnen' },
+    { value: 'herren-dauerwelle', label: 'Herren · Dauerwelle' },
+    { value: 'herren-haare-glaettung', label: 'Herren · Haare Glättung' },
+    { value: 'herren-haare-waschen', label: 'Herren · Haare Waschen' },
+
+    // Damen
+    { value: 'damen-waschen-schneiden-kurz', label: 'Damen · Waschen/Schneiden (kurz)' },
+    { value: 'damen-waschen-schneiden-lang', label: 'Damen · Waschen/Schneiden (lang)' },
+    { value: 'damen-waschen-schneiden-foehnen', label: 'Damen · Waschen/Schneiden/Föhnen' },
+    { value: 'damen-haarmaske', label: 'Damen · Haarmaske' },
+    { value: 'damen-pony-schneiden', label: 'Damen · Pony schneiden' },
+    { value: 'damen-ansaetze-faerben', label: 'Damen · Ansätze färben' },
+    { value: 'damen-komplett-faerben', label: 'Damen · Komplett färben' },
+    { value: 'damen-strahnen-oberkopf', label: 'Damen · Strähnen am Oberkopf' },
+    { value: 'damen-strahnen-komplett', label: 'Damen · Strähnen komplett' },
+    { value: 'damen-foehnen', label: 'Damen · Föhnen' },
+    { value: 'damen-dauerwelle', label: 'Damen · Dauerwelle' },
+    { value: 'damen-haare-glaettung', label: 'Damen · Haare Glättung' },
+    { value: 'damen-augenbrauen-faden', label: 'Damen · Augenbrauen zupfen (Faden)' },
+    { value: 'damen-augenbrauen-faerben', label: 'Damen · Augenbrauen färben' },
+    { value: 'damen-wimpern-faerben', label: 'Damen · Wimpern färben' },
+    { value: 'damen-balayage', label: 'Damen · Balayage' },
+
+    // Kinder
+    { value: 'kinder-jungs-bis-7', label: 'Kinder · Jungs bis 7 Jahre' },
+    { value: 'kinder-maedchen-bis-7', label: 'Kinder · Mädchen bis 7 Jahre' }
   ];
 
   protected readonly stylists: Option[] = [
