@@ -14,8 +14,9 @@ interface GalleryItem {
 })
 export class GalleryComponent {
   private readonly baseItems: GalleryItem[] = [
-    { image: 'assets/city2.webp' },
-    { image: 'assets/city4.webp' },
+    { image: 'assets/bild1.jpeg' },
+    { image: 'assets/bild2.jpeg' },
+    { image: 'assets/bild3.jpeg' },
     { image: 'assets/city5.webp' },
     { image: 'assets/city6.webp' },
     { image: 'assets/city8.webp' },
