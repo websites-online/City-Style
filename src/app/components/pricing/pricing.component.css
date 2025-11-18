@@ -35,20 +35,36 @@
   font-size: 0.98rem;
 }
 
+.tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.table-heading {
+  background: rgba(220, 191, 104, 0.18);
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid rgba(220, 191, 104, 0.25);
+}
+
+.table-heading h3 {
+  margin: 0;
+  color: #f7e7b4;
+  letter-spacing: 0.05rem;
+  font-size: 1.05rem;
+}
+
 .table-wrapper {
-  max-width: 920px;
-  margin: 0 auto;
   background: rgba(12, 10, 24, 0.35);
   border-radius: 1.2rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(220, 191, 104, 0.25);
-  overflow-x: auto;
   backdrop-filter: blur(8px);
+  overflow: hidden;
 }
 
 .pricing-table {
   width: 100%;
-  min-width: 620px;
   border-collapse: collapse;
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.92rem;
@@ -86,9 +102,11 @@
   color: #fff;
 }
 
-.pricing-table .description {
+.pricing-table .service .note {
+  display: block;
   color: rgba(255, 255, 255, 0.65);
-  line-height: 1.4;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
 }
 
 .pricing-table .price {
@@ -107,7 +125,6 @@
   }
 
   .pricing-table {
-    min-width: 100%;
     font-size: 0.9rem;
   }
 

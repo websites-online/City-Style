@@ -3,33 +3,34 @@
     <span class="eyebrow">Preise</span>
     <h2>City-Style Pricing</h2>
     <p>
-      Alle Preise verstehen sich inklusive individueller Beratung, typgerechtem Styling und den
-      hochwertigsten Pflegeprodukten.
+      Alle Preise auf einen Blick – übersichtlich nach Herren, Damen und Kinder sortiert.
     </p>
   </div>
 
-  <div class="table-wrapper">
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Beschreibung</th>
-          <th>Preis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of categories">
-          <td class="service">
-            <span class="name">{{ item.name }}</span>
-          </td>
-          <td class="description">
-            {{ item.description }}
-          </td>
-          <td class="price">
-            {{ item.price }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="tables">
+    <div class="table-wrapper" *ngFor="let category of categories">
+      <div class="table-heading">
+        <h3>{{ category.title }}</h3>
+      </div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of category.items">
+            <td class="service">
+              <span class="name">{{ item.name }}</span>
+              <span class="note" *ngIf="item.note">{{ item.note }}</span>
+            </td>
+            <td class="price">
+              {{ item.price }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>

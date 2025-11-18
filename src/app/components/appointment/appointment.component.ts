@@ -34,9 +34,8 @@ export class AppointmentComponent {
 
   protected readonly stylists: Option[] = [
     { value: 'egal', label: 'Beliebig' },
-    { value: 'max', label: 'Max' },
-    { value: 'filip', label: 'Filip' },
-    { value: 'marko', label: 'Marko' }
+    { value: 'mahmoud', label: 'Mahmoud' },
+    { value: 'tarek', label: 'Tarek' }
   ];
 
   protected readonly timeSlots = this.createTimeSlots(8, 21, 30);
