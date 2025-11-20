@@ -24,10 +24,10 @@ import { CommonModule } from '@angular/common';
         <div class="card">
           <h3>Angaben gemäß § 5 TMG und § 18 Abs. 2 MStV</h3>
           <p>
-            <strong>Friseursalon [NAME DES SALONS]</strong><br />
-            Inhaber: <strong>[VORNAME NACHNAME]</strong><br />
-            [STRAßE + HAUSNUMMER]<br />
-            [PLZ + ORT]<br />
+            <strong>Friseursalon City Style</strong><br />
+            Inhaber: <strong>Mahmoud Tiba</strong><br />
+            Gibitzenhofstraße 19<br />
+            90443 Nürnberg<br />
             Deutschland
           </p>
           <p>
@@ -36,22 +36,38 @@ import { CommonModule } from '@angular/common';
           </p>
           <p>
             <strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br />
-            [VORNAME NACHNAME]<br />
-            [STRAßE + HAUSNUMMER]<br />
-            [PLZ + ORT]
+            Mahmoud Tiba<br />
+            Gibitzenhofstraße 19<br />
+            90443 Nürnberg
           </p>
         </div>
 
         <div class="card">
           <h3>Kontakt &amp; Umsatzsteuer-ID</h3>
           <p>
-            Telefon: [TELEFONNUMMER]<br />
-            E-Mail: <a href="mailto:[E-MAIL-ADRESSE]">[E-MAIL-ADRESSE]</a>
+            Telefon: 0911 421966<br />
+            E-Mail: <a href="mailto:city00style@gmail.com">city00style@gmail.com</a>
           </p>
           <p>
             <strong>Umsatzsteuer-ID:</strong><br />
             (Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG)<br />
-            [UST-ID ODER „Nicht vorhanden“]
+            Nicht vorhanden
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Aufsichtsbehörde &amp; Berufsrecht</h3>
+          <p>
+            Zuständige Handwerkskammer: Handwerkskammer für Mittelfranken, Sulzbacher Straße 11-15, 90489
+            Nürnberg.
+          </p>
+          <p>
+            Es gelten die Bestimmungen der Handwerksordnung (HwO) und der Berufsordnung der Handwerkskammer für
+            Mittelfranken. Diese Regelungen können unter
+            <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer">
+              https://www.gesetze-im-internet.de/hwo/
+            </a>
+            eingesehen werden.
           </p>
         </div>
 
@@ -78,11 +94,11 @@ import { CommonModule } from '@angular/common';
           <h3>1. Verantwortlicher</h3>
           <p>Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
           <p>
-            <strong>Friseursalon [NAME DES SALONS]</strong><br />
-            Inhaber: <strong>[VORNAME NACHNAME]</strong><br />
-            [STRAßE + HAUSNUMMER]<br />
-            [PLZ + ORT]<br />
-            E-Mail: <a href="mailto:[E-MAIL-ADRESSE]">[E-MAIL-ADRESSE]</a>
+            <strong>Friseursalon City Style</strong><br />
+            Inhaber: <strong>Mahmoud Tiba</strong><br />
+            Gibitzenhofstraße 19<br />
+            90443 Nürnberg<br />
+            E-Mail: <a href="mailto:city00style@gmail.com">city00style@gmail.com</a>
           </p>
         </div>
 
@@ -152,6 +168,21 @@ import { CommonModule } from '@angular/common';
             Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland – Speicherung von Termin- und
             Kundendaten; mögliche Übermittlung in Drittstaaten auf Basis von EU-Standardvertragsklauseln.
           </p>
+
+          <h4>4.4 Google Maps</h4>
+          <p>
+            Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland – Darstellung der interaktiven
+            Karte auf unserer Kontaktseite. Google erhält hierbei mindestens Ihre IP-Adresse und ggf. weitere
+            Geräteinformationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer
+            ansprechenden Standortdarstellung); sofern eine Einwilligung in optionale Dienste eingeholt wird,
+            erfolgt die Verarbeitung auf Basis von Art. 6 Abs. 1 lit. a DSGVO. Übermittlungen in die USA stützen
+            sich auf EU-Standardvertragsklauseln. Weitere Informationen findest Du in der Datenschutzerklärung
+            von Google unter
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              https://policies.google.com/privacy
+            </a>
+            .
+          </p>
         </div>
 
         <div class="card">
@@ -177,7 +208,7 @@ import { CommonModule } from '@angular/common';
             <li>Widerspruch gegen die Verarbeitung</li>
             <li>Widerruf erteilter Einwilligungen</li>
           </ul>
-          <p>Kontakt: <a href="mailto:[E-MAIL-ADRESSE]">[E-MAIL-ADRESSE]</a></p>
+          <p>Kontakt: <a href="mailto:city00style@gmail.com">city00style@gmail.com</a></p>
           <p>
             Beschwerderecht bei der zuständigen Aufsichtsbehörde, z. B. BayLDA, Promenade 18, 91522 Ansbach,
             Deutschland.
@@ -195,8 +226,8 @@ import { CommonModule } from '@angular/common';
         <div class="card">
           <h3>8. Aktualität und Änderung dieser Datenschutzerklärung</h3>
           <p>
-            Diese Datenschutzerklärung hat den Stand [JAHR, z.&nbsp;B. 2025] und wird bei Bedarf angepasst, etwa
-            bei Änderungen eingesetzter Dienste oder gesetzlicher Vorgaben.
+            Diese Datenschutzerklärung hat den Stand {{ currentYear }} und wird bei Bedarf angepasst, etwa bei
+            Änderungen eingesetzter Dienste oder gesetzlicher Vorgaben.
           </p>
         </div>
       </article>

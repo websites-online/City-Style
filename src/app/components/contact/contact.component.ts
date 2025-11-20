@@ -15,9 +15,8 @@ export class ContactComponent {
   ];
 
   protected readonly hours = [
-    { day: 'Mo · Di', time: '09:00 – 19:00' },
-    { day: 'Mi · Do', time: '09:00 – 21:00' },
-    { day: 'Fr', time: '08:00 – 21:00' },
-    { day: 'Sa', time: '09:00 – 16:00' }
+    { day: 'Mo · Sa', time: '09:00 – 20:00' },
+    { day: 'So', time: 'Geschlossen' },
+
   ];
 }
