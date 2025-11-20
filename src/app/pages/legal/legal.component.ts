@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-legal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   template: `
     <section class="legal-hero">
       <div class="legal-hero__content">
@@ -13,7 +14,15 @@ import { CommonModule } from '@angular/common';
           Transparenz ist uns wichtig. Hier findest Du alle gesetzlichen Angaben sowie Informationen zur
           Verarbeitung Deiner Daten.
         </p>
-        <a href="/" class="back-link">Zurück zur Startseite</a>
+
+        <!-- Zurück zur Startseite: über Router, nicht href -->
+        <a
+          routerLink="/"
+          fragment="start"
+          class="back-link"
+        >
+          Zurück zur Startseite
+        </a>
       </div>
     </section>
 
@@ -235,7 +244,14 @@ import { CommonModule } from '@angular/common';
 
     <footer class="legal-footer">
       <p>© {{ currentYear }} City-Style Salon · Alle Rechte vorbehalten.</p>
-      <a href="/">Zurück zur Startseite</a>
+
+      <!-- Auch hier: Router-Navigation zurück nach oben -->
+      <a
+        routerLink="/"
+        fragment="start"
+      >
+        Zurück zur Startseite
+      </a>
     </footer>
   `,
   styleUrl: './legal.component.css'
