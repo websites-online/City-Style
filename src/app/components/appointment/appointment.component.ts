@@ -73,7 +73,13 @@ export class AppointmentComponent {
     date: ['', [Validators.required, this.validateAllowedWeekdays.bind(this)]],
     time: ['', Validators.required],
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.email]],
+    phone: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^[0-9+()\s-]{6,}$/)
+      ]
+    ],
     notes: ['']
   });
 

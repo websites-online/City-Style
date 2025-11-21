@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 
 export interface AppointmentPayload {
   name: string;
-  email: string;
+  phone: string;
   service: string;
   stylist: string;
   date: string;

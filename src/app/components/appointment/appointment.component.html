@@ -12,18 +12,18 @@
     <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
       <div class="form-grid">
         <label>
-          <span>Name</span>
-          <input type="text" formControlName="name" placeholder="Dein Name" />
+          <span>Vor- und Nachname</span>
+          <input type="text" formControlName="name" placeholder="Dein Vor- und Nachname" />
           <small class="error" *ngIf="appointmentForm.get('name')?.touched && appointmentForm.get('name')?.invalid">
             Bitte gib Deinen Namen ein.
           </small>
         </label>
 
         <label>
-          <span>E-Mail</span>
-          <input type="email" formControlName="email" placeholder="you@citymail.de" />
-          <small class="error" *ngIf="appointmentForm.get('email')?.touched && appointmentForm.get('email')?.invalid">
-            Bitte gib eine gültige E-Mail-Adresse ein.
+          <span>Telefon</span>
+          <input type="tel" formControlName="phone" placeholder="+49 170 1234567" />
+          <small class="error" *ngIf="appointmentForm.get('phone')?.touched && appointmentForm.get('phone')?.invalid">
+            Bitte gib eine gültige Telefonnummer ein.
           </small>
         </label>
 
