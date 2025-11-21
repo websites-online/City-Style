@@ -57,7 +57,10 @@
           <span>Datum</span>
           <input type="date" formControlName="date" />
           <small class="error" *ngIf="appointmentForm.get('date')?.touched && appointmentForm.get('date')?.invalid">
-            Bitte wähle ein Datum.
+            <ng-container *ngIf="appointmentForm.get('date')?.errors?.['disallowedDay']; else requiredDate">
+              Termine nur Montag bis Donnerstag buchbar.
+            </ng-container>
+            <ng-template #requiredDate>Bitte wähle ein Datum.</ng-template>
           </small>
         </label>
 

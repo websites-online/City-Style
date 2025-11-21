@@ -1,7 +1,7 @@
 // src/app/components/appointment/appointment.component.ts
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { BookingService, AppointmentPayload } from '../../services/booking.service';
 
 interface Option {
@@ -70,7 +70,7 @@ export class AppointmentComponent {
   protected readonly appointmentForm: FormGroup = this.formBuilder.group({
     service: ['', Validators.required],
     stylist: ['', Validators.required],
-    date: ['', Validators.required],
+    date: ['', [Validators.required, this.validateAllowedWeekdays.bind(this)]],
     time: ['', Validators.required],
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
@@ -161,5 +161,16 @@ export class AppointmentComponent {
     }
 
     return slots;
+  }
+
+  private validateAllowedWeekdays(control: AbstractControl): ValidationErrors | null {
+    if (!control.value) {
+      return null;
+    }
+    const day = new Date(control.value).getDay(); // 0 = Sonntag, 1 = Montag, ... 6 = Samstag
+    if (day === 0 || day >= 5) {
+      return { disallowedDay: true };
+    }
+    return null;
   }
 }
