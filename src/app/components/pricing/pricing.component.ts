@@ -25,18 +25,18 @@ export class PricingComponent {
       title: 'Herren',
       items: [
         { name: 'Schneiden/Föhnen', price: '18 €' },
-        { name: 'Waschen/Schneiden/Föhnen', price: '18 €' },
+        { name: 'Waschen/Schneiden/Föhnen', price: '23 €' },
         { name: 'Nassrasur', price: '10 €' },
-        { name: 'Schneiden/Formen mit Schere', price: '10 €' },
+        { name: 'Schneiden/Formen mit Schere', price: '18 €' },
         { name: 'Bart stutzen', price: '10 €' },
-        { name: 'Bart formen', price: '7 €' },
-        { name: 'Augenbrauen zupfen mit Faden', price: '15 €' },
+        { name: 'Bart formen', price: '10 €' },
+        { name: 'Augenbrauen zupfen mit Faden', price: '10 €' },
         { name: 'Wachs Gesicht komplett', price: 'ab 25 €' },
-        { name: 'Augenbrauen mit Messer', price: 'ab 40 €' },
+        { name: 'Augenbrauen mit Messer', price: '5 €' },
         { name: 'Farbe/Strähnen', price: 'ab 50 €' },
         { name: 'Dauerwelle', price: 'ab 40 €' },
         { name: 'Haare Glättung', price: 'ab 50 €' },
-        { name: 'Haare Waschen', price: '3 €' }
+        { name: 'Haare Waschen', price: '5 €' }
       ]
     },
     {
